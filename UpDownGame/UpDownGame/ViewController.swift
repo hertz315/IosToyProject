@@ -16,24 +16,32 @@ class ViewController: UIViewController {
     // 컴퓨터 랜덤 숫자
     var comChoiceNumber = Int.random(in: 1...10)
     
+    // 내가 선택한 숫자를 담는 변수
+    var myChoiceNumber: Int = 1
+    
     
     
     // 앱이 실행될때 처음 화면에 그려지는 함수
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 메인레이블 에 선택하세요 표시
-        // 숫자레이블 "" 표시
-        // 컴퓨터가 랜덤으로 숫자 선택 후 저장
+        // 1) 메인레이블에 "선택하세요"
         mainLabel.text = "선택하세요"
+        
+        // 2) 숫자 레이블은 "" (빈문자열)
         numberLabel.text = ""
         
     }
 
     @IBAction func numberButtonTapped(_ sender: UIButton) {
-        // 숫자 선택하면 숫자 데이터 저장
-        // 숫자 데이터 숫자레이블에 표시
-        guard let myChoiceNumber = sender.currentTitle else { return }
-        numberLabel.text = myChoiceNumber
+        // 1) 버튼의 숫자를 가져와야함
+        guard let numString = sender.currentTitle else { return }
+        
+        // 2) 숫자 레이블이 변하도록 (숫자에 따라)
+        numberLabel.text = numString
+        
+        // 3) 선택한 숫자를 변수에다가 저장 (선택)
+        guard let num = Int(numString) else { return }
+        myChoiceNumber = num
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
@@ -46,20 +54,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func selectButtonTapped(_ sender: UIButton) {
-        // 내가 버튼 눌룬 숫자와 컴퓨터가 랜덤으로 선택한 숫자를 비교해서
-        // 메인 레이블에 Bingo/Up/Down 표시
-        // 맞출때 까지 반복
+        // 1) 컴퓨터의 숫자와 내가 선택한 숫자를 비교 UP/DOWN/BINGO 표시
         
-        guard let myChoiceNumInt = numberLabel.text else { return }
-        guard let myChoiceNumberInt = Int(myChoiceNumInt) else { return }
-        
-            if myChoiceNumberInt == comChoiceNumber {
-                mainLabel.text = "⭐️BINGO⭐️"
-            } else if myChoiceNumberInt < comChoiceNumber {
-                mainLabel.text = "UP"
-            } else {
-                mainLabel.text = "DOWN"
-            }
+        if comChoiceNumber > myChoiceNumber {
+            mainLabel.text = "UP"
+        } else if comChoiceNumber < myChoiceNumber {
+            mainLabel.text = "DOWN"
+        } else {
+            mainLabel.text = "😄BINGO😄"
+        }
     }
     
     
