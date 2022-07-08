@@ -15,8 +15,6 @@ class ViewController: UIViewController {
     
     // 컴퓨터 랜덤 숫자
     var comChoiceNumber = Int.random(in: 1...10)
-    // 내가 선택한 숫자
-    //var myChoiceNumber = 5
     
     
     
@@ -51,9 +49,13 @@ class ViewController: UIViewController {
         // 내가 버튼 눌룬 숫자와 컴퓨터가 랜덤으로 선택한 숫자를 비교해서
         // 메인 레이블에 Bingo/Up/Down 표시
         // 맞출때 까지 반복
-            if Int(numberLabel.text!)! == comChoiceNumber {
+        
+        guard let myChoiceNumInt = numberLabel.text else { return }
+        guard let myChoiceNumberInt = Int(myChoiceNumInt) else { return }
+        
+            if myChoiceNumberInt == comChoiceNumber {
                 mainLabel.text = "⭐️BINGO⭐️"
-            } else if Int(numberLabel.text!)! < comChoiceNumber {
+            } else if myChoiceNumberInt < comChoiceNumber {
                 mainLabel.text = "UP"
             } else {
                 mainLabel.text = "DOWN"
