@@ -39,7 +39,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mgk-LD-cph">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ready" translatesAutoresizingMaskIntoConstraints="NO" id="Mgk-LD-cph">
                                                 <rect key="frame" x="0.0" y="30.5" width="171" height="171"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Mgk-LD-cph" secondAttribute="height" multiplier="1:1" id="0dQ-iw-Itx"/>
@@ -62,7 +62,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b7J-aD-cWp">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ready" translatesAutoresizingMaskIntoConstraints="NO" id="b7J-aD-cWp">
                                                 <rect key="frame" x="0.0" y="30.5" width="171" height="171"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="b7J-aD-cWp" secondAttribute="height" multiplier="1:1" id="EEb-tU-Baq"/>
@@ -199,6 +199,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ready" width="401" height="401"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

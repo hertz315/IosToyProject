@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var computerChoiceLabel: UILabel!
     @IBOutlet weak var myChoiceLabel: UILabel!
     
-    var myChoice: Srp = Srp.rock
+    var myChoice: Srp = Srp.scissors
     var comChoice: Srp = Srp(rawValue: Int.random(in: 0...2))!
     
     // 앱 실행시 처음 화면에 그려지는 함수
