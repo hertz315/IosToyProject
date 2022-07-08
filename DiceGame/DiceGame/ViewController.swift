@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     // 주사위 데이터 바구니 배열 생성
     var diceArray: [UIImage] = [#imageLiteral(resourceName: "black1"), #imageLiteral(resourceName: "black2"), #imageLiteral(resourceName: "black3"), #imageLiteral(resourceName: "black4"), #imageLiteral(resourceName: "black5"), #imageLiteral(resourceName: "black6")]
     
+    // 앱이 실행될때 처음으로 화면에 그려지는 함수(화면에 제일 먼저 표시된다)
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
